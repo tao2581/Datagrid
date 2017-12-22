@@ -2,6 +2,7 @@
 
 namespace Tao2581\DataGrid;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Hashing\Hasher as HasherContract;
 
@@ -26,12 +27,8 @@ class DataGridProvider extends ServiceProvider
      */
     public function register()
     {
-
-        // 绑定
-        $this->app->bind(
-            \Tao2581\DataGrid\Facades\DataGridFacade::class,
-            \Tao2581\DataGrid\DataGridService::class
-        );
+        $this->app->singleton('DataGridService', function ($app) {
+            return new DataGridService($app->make(Request::class));
+        });
     }
-
 }
