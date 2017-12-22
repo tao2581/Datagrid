@@ -1,0 +1,20 @@
+{
+    "name": "tao2581/datagrid",
+    "description": "datagrid data format",
+    "type": "library",
+    "license": "Apache",
+    "authors": [
+        {
+            "name": "tao2581",
+            "email": "tao2581@126.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "Hello\\": "src/"
+        }
+    }
+}
