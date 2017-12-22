@@ -1,6 +1,6 @@
 <?php
 
-namespace Tao2581\Datagrid\Grid;
+namespace Tao2581\DataGrid\Grid;
 
 use Exception;
 use Illuminate\Http\Request as IlluminateRequest;

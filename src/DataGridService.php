@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Http\Request;
 use Prettus\Repository\Contracts\RepositoryInterface;
-use Tao2581\Datagrid\DataGrid\Engines\EloquentEngine;
-use Tao2581\Datagrid\DataGrid\Engines\RepositoryEngine;
-use Tao2581\Datagrid\DataGrid\Engines\QueryBuilderEngine;
+use Tao2581\DataGrid\Engines\EloquentEngine;
+use Tao2581\DataGrid\Engines\RepositoryEngine;
+use Tao2581\DataGrid\Engines\QueryBuilderEngine;
 
 class DataGridService
 {
@@ -18,33 +18,31 @@ class DataGridService
      *
      * @param Request $request
      */
-    public function __construct(Request $request)
+    public function __construct()
     {
+        $request = Request::capture();
         $this->request = $request->request->count() ? $request : Request::capture();
     }
 
-    static public function test()
-    {
-        return 'hello test';
-    }
     /**
      * Gets query and returns instance of class
      *
      * @param  mixed $builder
      * @return mixed
      */
-    public function of($builder)
+    static public function of($builder)
     {
+        $self = new self();
         if ($builder instanceof Model || $builder instanceof EloquentBuilder || is_string($builder) ) {
-            $ins = new EloquentEngine($this->request, $builder);
+            $ins = new EloquentEngine($self->request, $builder);
         }
         elseif ($builder instanceof QueryBuilder)
         {
-            $ins = new QueryBuilderEngine($this->request, $builder);
+            $ins = new QueryBuilderEngine($self->request, $builder);
         }
         elseif ($builder instanceof RepositoryInterface)
         {
-            $ins = new RepositoryEngine($this->request, $builder);
+            $ins = new RepositoryEngine($self->request, $builder);
         }
         else
         {
@@ -52,6 +50,5 @@ class DataGridService
         }
 
         return $ins;
-
     }
 }

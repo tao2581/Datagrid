@@ -1,6 +1,6 @@
 <?php
 
-namespace Tao2581\Datagrid\DataGrid\Contracts;
+namespace Tao2581\DataGrid\Contracts;
 
 interface DataGridEngineContract
 {

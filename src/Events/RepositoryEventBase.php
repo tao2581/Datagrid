@@ -1,5 +1,5 @@
 <?php
-namespace Tao2581\Datagrid\DataGrid;
+namespace Tao2581\DataGrid\DataGrid;
 
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\RepositoryInterface;

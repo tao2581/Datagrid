@@ -1,7 +1,7 @@
 <?php
-namespace Tao2581\Datagrid\DataGrid\Engines;
+namespace Tao2581\DataGrid\Engines;
 
-use Tao2581\Datagrid\DataGrid\Contracts\DataGridEngineContract;
+use Tao2581\DataGrid\Contracts\DataGridEngineContract;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Http\Request;
 Use Schema;

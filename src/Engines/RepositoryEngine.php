@@ -1,9 +1,9 @@
 <?php
-namespace Tao2581\Datagrid\DataGrid\Engines;
+namespace Tao2581\DataGrid\Engines;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use Tao2581\Datagrid\DataGrid\Contracts\DataGridEngineContract;
+use Tao2581\DataGrid\Contracts\DataGridEngineContract;
 use Prettus\Repository\Contracts\RepositoryInterface;
 use Schema;
 use Prettus\Repository\Helpers\CacheKeys;
