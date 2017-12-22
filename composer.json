@@ -14,7 +14,8 @@
 
     "autoload": {
         "psr-4": {
-            "Hello\\": "src/"
+            "Tao2581\\DataGrid\\": "src/"
+
         }
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Tao2581\Datagrid\DataGrid;
+namespace Tao2581\DataGrid;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
@@ -23,6 +23,10 @@ class DataGridService
         $this->request = $request->request->count() ? $request : Request::capture();
     }
 
+    static public function test()
+    {
+        return 'hello test';
+    }
     /**
      * Gets query and returns instance of class
      *
