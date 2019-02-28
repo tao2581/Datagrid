@@ -20,8 +20,8 @@ class DataGridService
      */
     public function __construct()
     {
-        $request = Request::capture();
-        $this->request = $request->request->count() ? $request : Request::capture();
+        $request = \Request::instance();
+        $this->request = $request->request->count() ? $request : \Request::instance();
     }
 
     /**
