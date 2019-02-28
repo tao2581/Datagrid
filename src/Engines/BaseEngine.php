@@ -148,7 +148,7 @@ abstract class BaseEngine implements DataGridEngineContract
     public function init($request, $builder)
     {
         $this->builder      = $builder;
-        $this->request      = $request->request->count() ? $request : Request::capture();
+        $this->request      = $request->request->count() ? $request : \Request::instance();
         $this->pageIndex    = $request->pageIndex ? $request->pageIndex : 0;
         $this->pageSize     = $request->pageSize ? $request->pageSize : 20;
         $this->sortField    = $request->sortField ? $request->sortField : 'id';
