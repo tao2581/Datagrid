@@ -2,7 +2,7 @@
     "name": "tao2581/datagrid",
     "description": "datagrid data format",
     "type": "library",
-    "license": "Apache",
+    "license": "Mit",
     "authors": [
         {
             "name": "tao2581",
